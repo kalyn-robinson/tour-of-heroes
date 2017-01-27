@@ -8,8 +8,8 @@
     <div class="mdl-layout--large-screen-only mdl-layout__header-row">
     </div>
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-      <a href="#overview" class="mdl-layout__tab is-active">Overview</a>
-      <a href="#features" class="mdl-layout__tab">Features</a>
+      <a routerLink="/dashboard" class="mdl-layout__tab">Dashboard</a>
+      <a routerLink="/heroes" class="mdl-layout__tab">Heroes</a>
       <a href="#features" class="mdl-layout__tab">Details</a>
       <a href="#features" class="mdl-layout__tab">Technology</a>
       <a href="#features" class="mdl-layout__tab">FAQ</a>
@@ -17,8 +17,7 @@
   </header>
   <main class="mdl-layout__content">
     <div class="page-content">
-        <app-heroes class="mdl-grid"></app-heroes>
-        <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+      <router-outlet></router-outlet>
     </div>
   </main>
 </div>

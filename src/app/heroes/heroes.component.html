@@ -1,17 +1,19 @@
-<div class="mdl-card mdl-cell mdl-cell--3-col mdl-shadow--4dp"
-  *ngFor="let hero of heroes">
-  <div class="mdl-card__title">
-     <h2 class="mdl-card__title-text">
-       {{hero.name}}
-     </h2>
-  </div>
-  <div class="mdl-card__media">
-    <img src="http://placehold.it/500x150">
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-      (click)="onSelect(hero)">
-      Read More
-    </a>
+<div class="mdl-grid">
+  <div class="mdl-card mdl-cell mdl-cell--3-col mdl-shadow--4dp"
+    *ngFor="let hero of heroes">
+    <div class="mdl-card__title">
+       <h2 class="mdl-card__title-text">
+         {{hero.name}}
+       </h2>
+    </div>
+    <div class="mdl-card__media">
+      <img src="http://placehold.it/500x150">
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+        [routerLink]="['/detail', hero.id]">
+        Read More
+      </button>
+    </div>
   </div>
 </div>

@@ -10,6 +10,8 @@ import { HeroService } from './hero.service';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { RoutingModule }     from './routing/routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +23,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'heroes',
-        component: HeroesComponent
-      }
-    ])
+    RoutingModule
   ],
   providers: [
     HeroService
