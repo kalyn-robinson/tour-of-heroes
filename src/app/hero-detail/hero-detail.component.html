@@ -1,9 +1,33 @@
-<div *ngIf="hero">
-  <h2>{{hero.name}} details!</h2>
-  <div><label>id: </label>{{hero.id}}</div>
-  <div>
-      <label>name: </label>
-      <input [(ngModel)]="hero.name" placeholder="name"/>
+<dialog class="mdl-dialog" [attr.open]="showEdit ? true : null" *ngIf="hero">
+  <h4 class="mdl-dialog__title">Edit</h4>
+  <div class="mdl-dialog__content">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <label class="mdl-textfield__label" for="heroName">Name</label>
+        <input [(ngModel)]="hero.name" class="mdl-textfield__input" id="heroName"/>
+    </div>
   </div>
-  <button (click)="goBack()">Back</button>
+  <div class="mdl-dialog__actions">
+    <button type="button" class="mdl-button"
+      (click)="save(); showEdit = false;">Save</button>
+    <button type="button" class="mdl-button close"
+      (click)="showEdit = false;">Cancel</button>
+  </div>
+</dialog>
+
+<div class="content-grid mdl-grid" *ngIf="hero">
+  <div class="details-card mdl-card mdl-cell mdl-cell--12-col mdl-shadow--4dp
+    mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">{{hero.name}}</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Mauris sagittis pellentesque lacus eleifend lacinia...
+    </div>
+    <div class="mdl-card__actions mdl-card--border" (click)="showEdit = true">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        Edit
+      </a>
+    </div>
+  </div>
 </div>
